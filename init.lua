@@ -894,8 +894,29 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      -- vim.cmd.colorscheme 'tokyonight-moon'
+    end,
+  },
+
+  {
+    'Mofiqul/dracula.nvim',
+    priority = 1000,
+    config = function()
+      ---@diagnostic disable-next-line: missing-fields
+      require('dracula').setup {}
+
       vim.cmd.colorscheme 'dracula'
+    end,
+  },
+
+  {
+    'catppuccin/nvim',
+    priority = 1000,
+    config = function()
+      ---@diagnostic disable-next-line: missing-fields
+      require('catppuccin').setup {}
+
+      -- vim.cmd.colorscheme 'catppuccin-macchiato'
     end,
   },
 
@@ -992,7 +1013,8 @@ require('lazy').setup({
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
   -- you can continue same window with `<space>sr` which resumes last telescope search
 
-  { 'Mofiqul/dracula.nvim', lazy = false, priority = 1000 },
+  { 'Mofiqul/dracula.nvim' },
+  { 'catppuccin/nvim', name = 'catppuccin' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
